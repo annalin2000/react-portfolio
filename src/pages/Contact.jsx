@@ -1,5 +1,5 @@
 const CONTACT = {
-  linkedin: "https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME/",
+  linkedin: "https://www.linkedin.com/in/anna-lin-4b1262212",
   github: "https://github.com/annalin2000",
   email: "annalin1510@outlook.com",
 };

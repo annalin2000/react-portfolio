@@ -17,7 +17,7 @@ const WEEKLY_REPOS = [
 
 const CACHE_KEY = "gh_repos_cache_v1";
 const CACHE_AT_KEY = "gh_repos_cache_at_v1";
-const CACHE_TTL_MS = 20 * 60 * 1000; // 10 minutes
+const CACHE_TTL_MS = 10 * 60 * 1000; // 10 minutes
 
 export default function Projects() {
   const [projects, setProjects] = useState([]);
@@ -162,6 +162,7 @@ export default function Projects() {
               sessionStorage.removeItem(CACHE_KEY);
               sessionStorage.removeItem(CACHE_AT_KEY);
               setStatus("loading");
+
               window.location.reload();
             }}
             style={{ marginTop: 12 }}
