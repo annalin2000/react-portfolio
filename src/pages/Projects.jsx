@@ -17,7 +17,7 @@ const WEEKLY_REPOS = [
 
 const CACHE_KEY = "gh_repos_cache_v1";
 const CACHE_AT_KEY = "gh_repos_cache_at_v1";
-const CACHE_TTL_MS = 10 * 60 * 1000; // 10 minutes
+const CACHE_TTL_MS = 10 * 60 * 1000; 
 
 export default function Projects() {
   const [projects, setProjects] = useState([]);
@@ -32,7 +32,6 @@ export default function Projects() {
         setStatus("loading");
         setErrorMsg("");
 
-        // 1) Use cached GitHub response to avoid rate limit during dev refreshes
         const cached = sessionStorage.getItem(CACHE_KEY);
         const cachedAt = sessionStorage.getItem(CACHE_AT_KEY);
 
@@ -46,7 +45,6 @@ export default function Projects() {
           }
         }
 
-        // 2) If no cache, fetch from GitHub (optionally with token for local dev)
         if (!data) {
           const token = import.meta.env.VITE_GITHUB_TOKEN;
 
@@ -61,7 +59,6 @@ export default function Projects() {
           const text = await res.text();
 
           if (!res.ok) {
-            // Try to show GitHub's message if present
             let message = text;
             try {
               const parsed = JSON.parse(text);
@@ -90,12 +87,11 @@ export default function Projects() {
 
           data = JSON.parse(text);
 
-          // Save cache for 10 minutes
           sessionStorage.setItem(CACHE_KEY, JSON.stringify(data));
           sessionStorage.setItem(CACHE_AT_KEY, String(Date.now()));
         }
 
-        // 3) Map repos into your weekly cards
+
         const mapByName = new Map(data.map((r) => [r.name, r]));
 
         const weekly = WEEKLY_REPOS.map((name, idx) => {

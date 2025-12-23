@@ -18,7 +18,7 @@ const WEEKLY_REPOS = [
 
 export default function Home() {
   const [projects, setProjects] = useState([]);
-  const [status, setStatus] = useState("loading"); // loading | ok | error
+  const [status, setStatus] = useState("loading"); 
 
   useEffect(() => {
     async function load() {
@@ -73,7 +73,7 @@ export default function Home() {
 
   return (
     <section className="container home">
-      {/* HERO */}
+      {}
       <h1 className="home-title">Hi, I am Anna...</h1>
       <div className="home-underline" />
 
@@ -82,9 +82,9 @@ export default function Home() {
         applications. I enjoy solving problems, exploring new technologies, and turning ideas into functional products.
       </p>
 
-      {/* Single button like you wanted */}
+      {}
 
-      {/* Featured preview (ONLY 4) */}
+      {}
       <div className="home-projects">
         <div className="home-projects-head">
           <h2 className="home-projects-title">Projects</h2>

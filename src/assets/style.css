@@ -184,7 +184,7 @@ a{ color: inherit; text-decoration: none; }
   width: 110px;
   height: 6px;
   border-radius: 999px;
-  background: #eef2f7; /* mint underline like screenshot */
+  background: #eef2f7;
   margin-bottom: 36px;
 }
 .home-text{
@@ -341,7 +341,6 @@ a{ color: inherit; text-decoration: none; }
   color: #3c73c5;
 }
 
-/* Responsive */
 @media (max-width: 980px){
   .grid{ grid-template-columns: repeat(2, 1fr); }
   .contact-grid{ grid-template-columns: 1fr; }
